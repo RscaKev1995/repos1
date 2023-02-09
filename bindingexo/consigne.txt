@@ -1,0 +1,3 @@
+creer un component favorite 
+    par defaut il va afficher 
+    l etoile voiture , et onclick elle se remplit

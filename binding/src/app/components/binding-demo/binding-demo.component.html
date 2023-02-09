@@ -1,0 +1,37 @@
+<!-- lié un evenement c est dans la parenthese -->
+
+<input type="text" [disabled]="isNotAllowedToWrite"(keyup.enter)="changeUsername(usernameInput)" #usernameInput/> 
+ <!-- les braquets autour de disabled permet de dire que isallowedtowrite entre lkes guillements est du javascript et donc la propriete disabled est liée a la variable is allowedtowrite ; si isnotallowedtowrite est true l attribut disabled est active et est visible dans l'html-->
+  <!-- separe par le point c est la classe qu'on veut afficher en plus si valide ; si ispremium est true on ajoute la classe premium comme attribut a notre p -->
+  
+  <!-- avec la# on creer une variable qui existe que dans mon html -->
+  <input type="text" [disabled]="isNotAllowedToWrite"(keyup.enter)="changeUsername(usernameInput)"[(ngModel)]="userName"/>
+ <!-- on a crochet et parenthese car va de js a html et inverse -->
+  <p>
+    binding à double sens
+
+  </p>
+<p [class.premium]="isPremium" class="bidon" [style.backgroundColor]="isPremium ? 'lavender':'none'"> 
+    
+    {{userName}}
+
+</p>
+
+<p [ngClass]="{
+    
+    premium:isPremium,
+    bidon:isPremium
+    
+    
+}"[ngStyle]="
+{
+    border:isPremium?'1px solid pink':'none',
+    fontSize: isPremium ?'32px':'1em'
+
+
+}
+">mais poeoj laozk
+
+    
+
+</p>
